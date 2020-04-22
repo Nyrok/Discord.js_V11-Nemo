@@ -669,7 +669,7 @@ bot.on("message", async message => {
       )
       .addField(
         "**Veuillez choisir une des réactiomns ci-dessous**",
-        "1️⃣ `Menu help modération`,\n2️⃣ `Menu help backup`,\n3️⃣ `Menu help serveur`,\n4️⃣ `Menu help NSFW`,\n5️⃣ `Menu help autres`."
+        "1️⃣ `Menu help modération`,\n2️⃣ `Menu help serveur`,\n3️⃣ `Menu help NSFW`,\n4️⃣ `Menu help autres`."
       )
       .setThumbnail(bot.user.avatarURL)
       .setFooter(
@@ -682,7 +682,6 @@ bot.on("message", async message => {
     await ff.react("2️⃣");
     await ff.react("3️⃣");
     await ff.react("4️⃣");
-    await ff.react("5️⃣");
   }
   bot.on("messageReactionAdd", async (reaction, user) => {
     if(db.get("blacklist").find({id: user.id}).value()) return;
@@ -708,26 +707,6 @@ bot.on("message", async message => {
       ff.react("🔙");
       reaction.remove(user);
     } else if (reaction.emoji.name === "2️⃣") {
-      var je = new discord.RichEmbed()
-        .setTitle("[💢] **Menu backup**")
-        .setAuthor(
-          message.author.username + "#" + message.author.discriminator,
-          message.author.displayAvatarURL
-        )
-        .setDescription("Voici les commandes backup")
-        .setThumbnail(bot.user.avatarURL)
-        .addField(prefix + "bcreate", "Crée une backup de votre serveur")
-        .addField(prefix + "bload", "Load votre backup")
-        .setFooter(
-          "@Nyrok10 and @Ssh9334 on Twitter",
-          "https://cdn.discordapp.com/emojis/590848931852713984.png?v=1"
-        )
-        .setTimestamp();
-      if (user.bot) return;
-      await ff.edit(je);
-      ff.react("🔙");
-      reaction.remove(user);
-    } else if (reaction.emoji.name === "3️⃣") {
       var j = new discord.RichEmbed()
         .setTitle("[🎴] **Menu serveur**")
         .setAuthor(
@@ -760,7 +739,7 @@ bot.on("message", async message => {
       await ff.edit(j);
       ff.react("🔙");
       reaction.remove(user);
-    } else if (reaction.emoji.name === "4️⃣") {
+    } else if (reaction.emoji.name === "3️⃣"){
       var fd = new discord.RichEmbed()
         .setTitle("[🏧] **Menu NSFW**")
         .setAuthor(
@@ -787,7 +766,7 @@ bot.on("message", async message => {
       await ff.edit(fd);
       ff.react("🔙");
       reaction.remove(user);
-    } else if (reaction.emoji.name === "5️⃣") {
+    } else if (reaction.emoji.name === "4️⃣") {
       var jg = new discord.RichEmbed()
         .setTitle("[🌐] **Menu autres**")
         .setAuthor(
