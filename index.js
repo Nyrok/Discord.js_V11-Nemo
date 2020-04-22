@@ -13,9 +13,15 @@ bot.commands = new Discord.Collection()
 bot.login(process.env.TOKEN);
 
 bot.on("ready", () => {
-  console.log(figlet.textSync("projet").red);
+  console.log(figlet.textSync("némo").cyan);
   bot.user.setActivity("Copyright", { type: "STREAMING" });
   bot.user.setStatus("idle");
+  let statues = ["@Nyrok10 and @Ssh9334 on Twitter", "Nemo-V1", `"." is the basic prefix.`, "Nemo-Project", "Nemo-Bêta"];
+    setInterval(function(){
+    let status = statues[Math.floor(Math.random()*statues.length)];
+        bot.user.setActivity(status, {type: "LISTENING"});
+        bot.user.setStatus("idle");
+    }, 5000)
 });
 bot.on("guildCreate", guild => {
   db.get("config").push({id: guild.id, prefix: "."}).write();
@@ -522,6 +528,7 @@ bot.on("message", message => {
       .addField("**ID: **", bot.user.id)
       .addField("**Nom: **", bot.user.username)
       .addField("**Préfix: **", prefix)
+      .addField("**Nombre de serveur: **", bot.guilds.size)
       .addField("**Date de création: **", bot.user.createdAt)
       .addField("**Status actuel: **", bot.user.presence.status)
       .addField("**Version: **", "1.0")
@@ -872,7 +879,6 @@ if (message.channel.type === "dm") {
 if(!role){
   return message.channel.send(`:white_check_mark: J'ai créé un rôle nommé mute. Veuillez réessayer de mute la personne!`)
 }
-
           let time = arg[2];
           if(!time){
        
@@ -882,15 +888,12 @@ if(!role){
 
      
         message.channel.send  (`${person.user.tag} a été mute durant ${ms(ms(time))}`)
-  
-          setTimeout(function(){
+            setTimeout(function(){
               console.log(role)
             
             message.channel.send  (`${person.user.tag} est maintenant unmute!`)
           }, ms(time));
 
-
- 
       break;
   }
 })
