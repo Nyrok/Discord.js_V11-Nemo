@@ -10,7 +10,7 @@ const db = low(adapter);
 const ms = require('ms')
 db.defaults({ config: [], blacklist: []}).write();
 bot.commands = new Discord.Collection()
-bot.login("NzAxODcxODA4MTQzNjg3Nzcx.Xp_vtw.foR-6l0pX1wjl5aEYq1WE2GpXds");
+bot.login(process.env.TOKEN);
 
 bot.on("ready", () => {
   console.log(figlet.textSync("projet").red);
