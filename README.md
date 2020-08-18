@@ -14,7 +14,7 @@
   * *Lien vers [Sublime Text](https://www.sublimetext.com/download).*
 * **Packages NPM :**
   * *npm install [discord.js@11.6.4](https://www.npmjs.com/package/discord.js/v/11.6.4)*
-  * *npm install [figlet](https://npmjs.com/package/figlet)
+  * *npm install [figlet](https://npmjs.com/package/figlet)*
   * *npm install [colors](https://npmjs.com/package/colors)*
   * *npm install [lowdb](https://npmjs.com/package/lowdb)*
   * *npm install [superagent](https://npmjs.com/package/superagent)*
