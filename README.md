@@ -27,5 +27,5 @@
 #### Et enfin ouvrez le fichier start.cmd and `Enjoy !`
 
 # Réseaux et Remerciements
-#### Twitter : Nyrok : [@Nyrok10](https://twitter.com/Nyrok10)
-#### Twitter : Plattyz : [@0x4d6f6b6d69](https://twitter.com/0x4d6f6b6d69)
+#### Twitter de Nyrok : [@Nyrok10](https://twitter.com/Nyrok10)
+#### Twitter de Plattyz : [@0x4d6f6b6d69](https://twitter.com/0x4d6f6b6d69)
